@@ -1,8 +1,6 @@
 package com.project.bookflix.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +12,7 @@ public class ShowSeat extends BaseModel {
     private Show show;
     @ManyToOne
     private Seat seat;
+    @Enumerated(EnumType.ORDINAL)
     private ShowSeatStatus showSeatStatus;
 
 }

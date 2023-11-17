@@ -1,9 +1,6 @@
 package com.project.bookflix.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,5 +15,6 @@ public class Movie extends BaseModel {
     private String duration;
     private double rating;
     @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Genre> genre;
 }
